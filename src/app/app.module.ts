@@ -19,14 +19,22 @@ import { BooksComponent } from './components/books/books.component';
 import { BookListComponent } from './components/books/book-list/book-list.component';
 import { BookComponent } from './components/books/book/book.component';
 //services
-import { BookService } from './services/book.service';
+import { BookService } from './services/book.service;
+import { HomePageComponent } from './components/home-page/home-page.component;
+import { LoginPageComponent } from './components/login-page/login-page.component;
+import { RegisterPageComponent } from './components/register-page/register-page.component;
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component''''';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponent,
     BookListComponent,
-    BookComponent
+    BookComponen,
+    HomePageComponent,
+    LoginPageComponent,
+    RegisterPageComponent,
+    NotFoundPageComponentt
   ],
   imports: [
     BrowserModule,
