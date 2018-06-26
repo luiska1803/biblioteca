@@ -23,7 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "../biblioteca/node_modules/ngx-toastr/toastr.css"
+
             ],
             "scripts": []
           },

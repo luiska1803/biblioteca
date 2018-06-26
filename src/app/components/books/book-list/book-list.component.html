@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+      <h6 class="text-center"> Lista de Libros </h6>
+      <table class="table table-sm table-hover">
+        <tbody>
+          <th>Libro</th>
+          <th>Autor/a</th>
+          <th>Total</th>
+          <th>Editar/Borrar</th>
+          <!-- ngfor para traer la lista de libros desde la vase de datos-->
+          <tr *ngFor="let book of bookList">
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.total_books}}</td>
+            <!-- Se agrega un (click) para que se ejecute la funcion onEdit -->
+              <a class="btn btn-secondary text-white" (click)="onEdit(book)">
+                <i class="fas fa-edit"></i>
+              </a>
+            <!-- Se agrega un (click) para que se ejecute la funcion onDelete -->
+              <a class="btn btn-danger text-white" (click)="onDelete(book.$key)">
+                  <i class="fas fa-trash-alt"></i>
+              </a>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

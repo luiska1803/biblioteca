@@ -1,0 +1,108 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+        <!-- input oculto para poder Editar cuando se seleccione un libro -->
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="bookService.selectedBook.$key">
+        <!-- Formulario para el ingreso de libros a la base de datos firebase -->
+        <div class="form-group">
+        <label>Nombre del Libro: </label>
+          <input type="text" 
+          class="form-control" 
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="bookService.selectedBook.name"
+          placeholder="Agrega Nombre del Libro">
+        </div>
+
+        <div class="form-group">
+        <label>Autor del Libro: </label>
+            <input 
+            type="text" 
+            class="form-control" 
+            name="author"
+            #author="ngModel"
+            [(ngModel)]="bookService.selectedBook.author"
+            placeholder="Agrega Autor del Libro">
+        </div>
+
+        <div class="form-group">
+        <label>Genero del Libro: </label>
+            <input type="text" 
+            class="form-control" 
+            name="gender"
+            #gender="ngModel"
+            [(ngModel)]="bookService.selectedBook.gender"
+            placeholder="Agrega genero del Libro">
+        </div>
+
+        <div class="form-group">
+        <label>Idioma del Libro: </label>
+            <input type="text" 
+            class="form-control" 
+            name="language"
+            #language="ngModel"
+            [(ngModel)]="bookService.selectedBook.language"
+            placeholder="Agrega Idioma del Libro">
+        </div>
+
+        <div class="form-group">
+        <label>País de origen del Libro: </label>
+            <input type="text" 
+            class="form-control" 
+            name="country"
+            #country="ngModel"
+            [(ngModel)]="bookService.selectedBook.country"
+            placeholder="Agrega Pais del Libro">
+        </div>
+
+        <div class="form-group">
+        <label>Fecha de puclicación del Libro: </label>
+            <input type="date" 
+            class="form-control" 
+            name="pub_date"
+            #pub="ngModel"
+            [(ngModel)]="bookService.selectedBook.pub_date"
+            placeholder="Agrega fecha de publicacion del Libro">
+        </div>
+
+        <div class="form-group">
+        <label>Numero de paginas del Libro: </label>
+            <input type="number" 
+            class="form-control" 
+            name="pages"
+            #pages="ngModel"
+            [(ngModel)]="bookService.selectedBook.pages"
+            placeholder="Agrega numero de paginas del Libro">
+        </div>
+
+        <div class="form-group">
+        <label>Numero de libros reservados: </label>
+            <input type="number" 
+            class="form-control" 
+            name="reserved_books"
+            #reserved="ngModel"
+            [(ngModel)]="bookService.selectedBook.reserved_books"
+            placeholder="Agrega numero de reservas del Libro">
+        </div>
+
+        <div class="form-group">
+        <label>Numero total de libros disponibles: </label>
+              <input type="number" 
+              class="form-control" 
+              name="total_books"
+              #total="ngModel"
+              [(ngModel)]="bookService.selectedBook.total_books"
+              placeholder="Agrega el numero total del Libro">
+          </div>
+
+          <div class="form-group text-center">
+              <button class="btn btn-primary" type="submit"> 
+                  <i class="fas fa-plus-circle"></i> Add Book
+              </button>
+              <button class="btn btn-secondary" type="reset" (click)="resetForm(bookForm)">
+                  <i class="fas fa-sync-alt"></i> Reset
+              </button>
+          </div>
+    </form>
+  </div>
+</div>
